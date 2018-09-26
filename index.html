@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dashboard</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">	
+	<link rel="stylesheet" type="text/css" href="dashboard.css">  
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src='dashboard.js'></script>
+	<script src='d3tip.js'></script>
+	<!-- <script src='./static/js/dash.js'></script> -->
+	<style type="text/css">
+		.select{
+			width: 100px;
+		}
+
+		.bar { fill: steelblue; }
+	</style>
+</head>
+<body style="background-color: #e5e6e8">
+
+
+<div class="container">
+
+	<div class="row">
+		
+		<div class="col-md-3 col-sm-3">
+			<div class="form-group">
+			  <label for="region"> Region:</label>
+			  <select class="form-control" id="region">
+			  	<option selected>----Select----</option>
+			    
+			  </select>
+			</div>					
+		</div>
+		<div class="col-md-3 col-sm-3">
+			<div class="form-group">
+			  <label for="country"> Country:</label>
+			  <select class="form-control" id="country">
+			    <option selected>----Select----</option>
+			  </select>
+			</div>					
+		</div>
+		<div class="col-md-3 col-sm-3">
+			<div class="form-group">
+			  <label for="metric"> Metric:</label>
+			  <select class="form-control" id="metric">
+			    <option selected>----Select----</option>
+			  </select>
+			</div>					
+		</div>
+		<div class="col-md-3 col-sm-3">
+			<div class="form-group">
+			  <label for="submetric"> SubMetric:</label>
+			  <select class="form-control" id="submetric">
+			   <option selected>----Select----</option>
+			  </select>
+			</div>					
+		</div>
+
+		<div class="col-md-2 col-sm-2"></div>
+		<div class="col-md-4 col-sm-4">
+			<div class="form-group">
+			  <label for="year"> Year:</label>
+			  <select class="form-control" id="year">
+			   <option selected>----Select----</option>
+			  </select>
+			</div>					
+		</div>
+		<div class="col-md-4 col-sm-4">
+			<div class="form-group">
+			  <label for="month"> Month:</label>
+			  <select class="form-control" id="month">
+			    <option selected>----Select----</option>
+			  </select>
+			</div>					
+		</div>
+		<div class="col-md-2 col-sm-2"></div>
+		
+		<div class="col-md-4 col-sm-4"></div>
+		<div class="col-md-4 col-sm-4" align="center">
+			<button type="button" class="btn btn-success" id="SubmitBtn">Submit</button>
+		</div>
+		<div class="col-md-4 col-sm-4"></div>
+	</div>
+</div>
+<div class="container-fluid">
+	<div class="col-md-8 col-md-offset-2">
+		<ul class="breadcrumb" id="breadcrumb">
+    	</ul>
+	</div>
+	
+	<div class="row">
+		
+		<div class="col-md-6 bar1 col-sm-6">
+			<div class="ind1">
+				<h4 class="text-primary indicator">No of C&C : <span id="indicator_value1" class="text-danger"> ??..</span> </h4>
+				<h4 class="text-primary indicator">Total C&C : <span id="indicator_Totalvalue" class="text-danger"> ??..</span> </h4>
+			</div>
+				<h4 class="indicator_chart">Cabin and Class </h4>
+			<div class="bar11" id="barChart1">
+			
+			</div>
+		</div>
+		<div class="col-md-6 col-sm-6 bar2">
+			<div class="col-md-12 col-sm-12">
+				<div class="col-md-6 col-sm-6 ind2">
+					<h4 class="text-primary indicator">Total Year Value : <span id="indicator_value2" class="text-danger"> ??..</span> K</h4>
+				</div>
+				
+				<div class="col-md-6 col-sm-6 ind3">
+					<h4 class="text-primary indicator">Monthly contribution on that year Value : <span id="indicator_value3" class="text-danger"> ??..</span> %</h4>
+				</div>
+			</div>
+			<div class="col-md-12 col-sm-12">
+				<h4 class="indicator_chart">Gateway </h4>
+				<div class="bar12" id="barChart2">			
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
